@@ -17,7 +17,7 @@ afterAll(async () => {
 });
 
 describe("User Routes", () => {
-  it("SHOULD CREATE A NEW USER", async () => {
+  it("should create a new user", async () => {
     const res = await request(app).post("/api/users").send({
       name: "Test User",
       email: "test@example.com",

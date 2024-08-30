@@ -63,16 +63,19 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 16
 
       - name: Navigate to the correct directory
-        run: cd ../../package.json
+        run: cd appointments-api
 
       - name: Install dependencies
         run: npm install
+        working-directory: appointments-api
 
       - name: Run tests
         run: npm test
+        working-directory: appointments-api
 
       - name: Collect coverage
         run: npm run test -- --coverage
+        working-directory: appointments-api
