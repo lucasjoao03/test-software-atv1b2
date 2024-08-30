@@ -3,7 +3,7 @@ marp: true
 theme: default
 class: 
   - lead
-backgroundImage: url('./if_back1.png')
+backgroundImage: url('./assets/if_back1.png')
 
 paginate: true
 ---
