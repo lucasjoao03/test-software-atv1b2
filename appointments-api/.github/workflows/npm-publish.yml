@@ -1,44 +1,29 @@
-name: Node.js CI/CD
+name: Node.js CI
 
 on:
   push:
-    branches:
-      - master
+    branches: [master]
   pull_request:
-    branches:
-      - master
+    branches: [master]
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x, 20.x]
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: ${{ matrix.node-version }}
 
-      - name: Print current directory
-        run: pwd
+      - run: npm install
 
-      - name: List files in root directory
-        run: ls -la
-
-      - name: List files in appointments-api directory
-        run: ls -la
-        working-directory: appointments-api
-
-      - name: Install dependencies
-        run: npm install
-        working-directory: appointments-api # Certifique-se de que os comandos estão sendo executados no diretório correto
-
-      - name: Run tests
-        run: npm test
-        working-directory: appointments-api # Certifique-se de que os comandos estão sendo executados no diretório correto
-
-      - name: Collect coverage
-        run: npm run test -- --coverage
-        working-directory: appointments-api # Certifique-se de que os comandos estão sendo executados no diretório correto
+      - run: npm test
+        env:
+          CI: true
