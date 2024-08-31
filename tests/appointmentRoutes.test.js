@@ -34,7 +34,7 @@ describe("Appointment Routes", () => {
     expect(res.body).toHaveProperty("id");
   });
 
-  it("should retrieve ALL appointments", async () => {
+  it("should retrieve all appointments", async () => {
     const res = await request(app).get("/api/appointments");
     expect(res.statusCode).toEqual(200);
     expect(res.body.length).toBeGreaterThan(0);
