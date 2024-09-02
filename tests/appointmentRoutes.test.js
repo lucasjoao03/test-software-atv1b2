@@ -50,7 +50,7 @@ describe("Appointment Routes", () => {
     expect(res.body.description).toBe("Consulta de retorno");
   });
 
-  it("SHOULD delete an appointment", async () => {
+  it("should delete an appointment", async () => {
     const res = await request(app).delete("/api/appointments/1");
     expect(res.statusCode).toEqual(204);
   });
