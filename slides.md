@@ -39,6 +39,7 @@ paginate: true
 - **GitLab CI/CD:** Pipelines integrados ao GitLab.
 - **Travis CI:** Serviço de CI para GitHub.
 - **CircleCI:** Plataforma eficiente para pipelines CI/CD.
+- **Github Action:** Action no github para automatizar os testes.
 
 ---
 
@@ -51,15 +52,6 @@ paginate: true
 
 ---
 
-# Exemplo Prático de CI/CD com Jenkins
-
-1. **Configuração do Jenkins:** Instalação e plugins.
-2. **Criação de Pipeline:** Automação de build, teste e deploy.
-3. **Integração com Repositório:** Conexão com GitHub/GitLab.
-4. **Execução do Pipeline:** Testar integração contínua e deploy contínuo.
-5. **Monitoramento:** Usar relatórios e feedback para melhorias.
-
----
 
 # Benefícios da Implementação de CI/CD
 
